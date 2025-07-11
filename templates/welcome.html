@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to TaskFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .welcome-container {
+            text-align: center;
+            color: rgb(196, 104, 190);
+            margin-top: 15vh;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0;
+            color: #b345a5;
+        }
+
+        .welcome-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 10px 0 20px;
+            color: #cc5bde;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #9b20a3;
+            margin-bottom: 40px;
+        }
+
+        .welcome-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .welcome-buttons a {
+            text-decoration: none;
+            padding: 14px 30px;
+            background-color: #8fdef0;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .welcome-buttons a:hover {
+            background-color: #6bd7f0;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg">
+    <div class="welcome-container">
+        <div class="welcome-subtitle">Welcome to</div>
+        <div class="welcome-title">TASKFLOW</div>
+        <div class="tagline">Organize your tasks. Own your time. Achieve more.</div>
+        <div class="welcome-buttons">
+            <a href="{{ url_for('login') }}">🔐 Login</a>
+            <a href="{{ url_for('register') }}">📝 Register</a>
+        </div>
+    </div>
+</body>
+</html>

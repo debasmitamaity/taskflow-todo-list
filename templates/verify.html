@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Verification | To-Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg">
+    <div class="auth-box">
+        <h2>📩 Email Verification</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="code" placeholder="🔐 Enter Verification Code" required>
+            <button type="submit">✔️ Verify</button>
+        </form>
+
+        <p style="margin-top: 15px;">Didn't get the email? 
+            <a href="{{ url_for('register') }}">Go back to register</a>
+        </p>
+    </div>
+</body>
+</html>

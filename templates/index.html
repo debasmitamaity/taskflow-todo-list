@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | To-Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg">
+    <div class="main-container">
+        <header>
+            <h2>Welcome, {{ username }} 👋</h2>
+        </header>
+
+        <button id="toggleAddTask">➕ Add Task</button>
+        <form id="taskForm" style="display:none;">
+            <input type="text" id="title" placeholder="Task title" required>
+            <input type="date" id="dueDate">
+            <select id="priority">
+                <option value="low">Low 🟢</option>
+                <option value="medium" selected>Medium 🟡</option>
+                <option value="high">High 🔴</option>
+            </select>
+            <select id="category">
+                <option value="">Select Category</option>
+                <option value="Work">Work</option>
+                <option value="Study">Study</option>
+                <option value="Home">Home</option>
+                <option value="Personal">Personal</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <button id="toggleShowTasks">📋 Show Tasks</button>
+
+        <div id="taskSection" style="display:none;">
+            <ul id="taskList"></ul>
+
+            <div class="actions">
+                <button id="clearCompleted">🧹 Clear Completed</button>
+            </div>
+
+            <input type="text" id="search" placeholder="🔍 Search tasks...">
+        </div>
+
+        <div class="logout">
+            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
